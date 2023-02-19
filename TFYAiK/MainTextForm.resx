@@ -1638,10 +1638,10 @@
         lBQoiJICBVFSoCBKChRESYGC6I+E+Ae1rR6QfE9kQAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="replyButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="undoButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAArdJREFUaEPtmEuoTVEYgI+8nyWFmBiQUiiJhEwQSpFImQkZGHgMDEwohDwykGQg
+        DAAACwwBP0AiyAAAArdJREFUaEPtmEuoTVEYgI+8nyWFmBiQUiiJhEwQSpFImQkZGHgMDEwohDwykGQg
         BgZSRIlQJOVdRjJgIEnKI+T9+r7b/Wun41737r3PvYv91dfdd53OXus/e61//WvXKioqKioqKir+fUbi
         Pbze9F+izMAX+LPZJFmFXzCCSC6QXngUHfgP3Nx8nVQgw/AGOuh3uAglqUCm4DN0wE9wAgbJBLIMP6CD
         vYqDMUunD6Qb7sAY6CHsjr/TqQMZhJfRAX7C5fgnIpCneAvP4GFch5PQH6RDGIuP0cG5LlwfLXENI5h6
@@ -1656,7 +1656,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="returnButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="redoButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
         cQAAEnEB89x6jgAAA/1JREFUaEPtmEsobVEYx483IY+SJAMGMlLeJVGIFFEyMCADSQbyCKGYGBh4DAyE
