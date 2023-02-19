@@ -32,6 +32,7 @@ namespace TFYAiK
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
+                this.currentFile = saveFileDialog.FileName;
                 StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName);
                 streamWriter.WriteLine(text);
                 streamWriter.Close();
