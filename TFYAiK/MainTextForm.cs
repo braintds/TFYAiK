@@ -122,11 +122,16 @@ namespace TFYAiK
                 redoStack.Pop()();
             }
         }
+        private void redoButton_Click(object sender, EventArgs e)
+        {
+            redo(textBox);
+        }
+
         private void undoButton_Click(object sender, EventArgs e)
         {
             if (undoStack.Count > 0)
             {
-                StackPush(sender, redoStack);
+                StackPush(textBox, redoStack);
                 undoStack.Pop()();
             }
         }
@@ -154,11 +159,6 @@ namespace TFYAiK
             var tBT = textBox.Text(textBox.Text, textBox.SelectionStart);
             stack.Push(tBT);
         }
-        private void redoButton_Click(object sender, EventArgs e)
-        {
-            redo((TextBox)sender);
-
-        }
 
         private void выделитьВсеToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -175,6 +175,8 @@ namespace TFYAiK
             HelpForm helpForm = new HelpForm("");
             helpForm.ShowDialog();
         }
+
+
     }
 
     public static class Extensions
