@@ -29,12 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.textBox = new System.Windows.Forms.RichTextBox();
+            this.lineNumberRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.debugLabel = new System.Windows.Forms.Label();
+            this.debugTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьКакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.правкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.повторитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,87 +55,146 @@
             this.классификацияГрамматикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.методАнализаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.диагностикаИНейтрализацияОшибокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.текстовыйПримерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.тестовыйПримерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокЛитературыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.исходныйКодПрограммыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пускToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.увеличитьМасштабToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.уменьшитьМасштабToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вызовСправкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
-            this.debugTextBox = new System.Windows.Forms.TextBox();
             this.cutButton = new System.Windows.Forms.Button();
             this.copyButton = new System.Windows.Forms.Button();
             this.pasteButton = new System.Windows.Forms.Button();
             this.undoButton = new System.Windows.Forms.Button();
             this.redoButton = new System.Windows.Forms.Button();
-            this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.debugLabel = new System.Windows.Forms.Label();
             this.createNewButton = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.openNewButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
             this.mainSplitContainer.Panel2.SuspendLayout();
             this.mainSplitContainer.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // mainSplitContainer
+            // 
+            resources.ApplyResources(this.mainSplitContainer, "mainSplitContainer");
+            this.mainSplitContainer.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.mainSplitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainSplitContainer.Name = "mainSplitContainer";
+            // 
+            // mainSplitContainer.Panel1
+            // 
+            resources.ApplyResources(this.mainSplitContainer.Panel1, "mainSplitContainer.Panel1");
+            this.mainSplitContainer.Panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.mainSplitContainer.Panel1.Controls.Add(this.textBox);
+            this.mainSplitContainer.Panel1.Controls.Add(this.lineNumberRichTextBox);
+            // 
+            // mainSplitContainer.Panel2
+            // 
+            this.mainSplitContainer.Panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.mainSplitContainer.Panel2.Controls.Add(this.debugLabel);
+            this.mainSplitContainer.Panel2.Controls.Add(this.debugTextBox);
+            // 
+            // textBox
+            // 
+            resources.ApplyResources(this.textBox, "textBox");
+            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox.Name = "textBox";
+            this.textBox.VScroll += new System.EventHandler(this.textBox_VScroll);
+            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            // 
+            // lineNumberRichTextBox
+            // 
+            resources.ApplyResources(this.lineNumberRichTextBox, "lineNumberRichTextBox");
+            this.lineNumberRichTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lineNumberRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lineNumberRichTextBox.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lineNumberRichTextBox.Name = "lineNumberRichTextBox";
+            this.lineNumberRichTextBox.ReadOnly = true;
+            // 
+            // debugLabel
+            // 
+            resources.ApplyResources(this.debugLabel, "debugLabel");
+            this.debugLabel.Name = "debugLabel";
+            // 
+            // debugTextBox
+            // 
+            resources.ApplyResources(this.debugTextBox, "debugTextBox");
+            this.debugTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.debugTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.debugTextBox.Name = "debugTextBox";
+            this.debugTextBox.ReadOnly = true;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.правкаToolStripMenuItem,
             this.текстToolStripMenuItem,
             this.пускToolStripMenuItem,
+            this.видToolStripMenuItem,
             this.справкаToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(942, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
+            this.файлToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.файлToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            resources.ApplyResources(this.файлToolStripMenuItem, "файлToolStripMenuItem");
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.создатьToolStripMenuItem,
             this.открытьToolStripMenuItem,
             this.сохранитьToolStripMenuItem,
-            this.сохранитьКакToolStripMenuItem});
+            this.сохранитьКакToolStripMenuItem,
+            this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.файлToolStripMenuItem.Text = "Файл";
             // 
             // создатьToolStripMenuItem
             // 
+            this.создатьToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.создатьToolStripMenuItem.Text = "Создать";
+            resources.ApplyResources(this.создатьToolStripMenuItem, "создатьToolStripMenuItem");
             this.создатьToolStripMenuItem.Click += new System.EventHandler(this.создатьToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem
             // 
+            this.открытьToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.открытьToolStripMenuItem.Text = "Открыть";
+            resources.ApplyResources(this.открытьToolStripMenuItem, "открытьToolStripMenuItem");
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
+            this.сохранитьToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            resources.ApplyResources(this.сохранитьToolStripMenuItem, "сохранитьToolStripMenuItem");
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // сохранитьКакToolStripMenuItem
             // 
+            this.сохранитьКакToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
+            resources.ApplyResources(this.сохранитьКакToolStripMenuItem, "сохранитьКакToolStripMenuItem");
             this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.сохранитьКакToolStripMenuItem_Click);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            resources.ApplyResources(this.выходToolStripMenuItem, "выходToolStripMenuItem");
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // правкаToolStripMenuItem
             // 
+            this.правкаToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.правкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.отменитьToolStripMenuItem,
             this.повторитьToolStripMenuItem,
@@ -139,284 +204,245 @@
             this.удалитьToolStripMenuItem,
             this.выделитьВсеToolStripMenuItem});
             this.правкаToolStripMenuItem.Name = "правкаToolStripMenuItem";
-            this.правкаToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.правкаToolStripMenuItem.Text = "Правка";
+            resources.ApplyResources(this.правкаToolStripMenuItem, "правкаToolStripMenuItem");
             // 
             // отменитьToolStripMenuItem
             // 
+            this.отменитьToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.отменитьToolStripMenuItem.Name = "отменитьToolStripMenuItem";
-            this.отменитьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.отменитьToolStripMenuItem.Text = "Отменить";
+            resources.ApplyResources(this.отменитьToolStripMenuItem, "отменитьToolStripMenuItem");
+            this.отменитьToolStripMenuItem.Click += new System.EventHandler(this.отменитьToolStripMenuItem_Click);
             // 
             // повторитьToolStripMenuItem
             // 
+            this.повторитьToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.повторитьToolStripMenuItem.Name = "повторитьToolStripMenuItem";
-            this.повторитьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.повторитьToolStripMenuItem.Text = "Повторить";
+            resources.ApplyResources(this.повторитьToolStripMenuItem, "повторитьToolStripMenuItem");
+            this.повторитьToolStripMenuItem.Click += new System.EventHandler(this.повторитьToolStripMenuItem_Click);
             // 
             // вырезатьToolStripMenuItem
             // 
+            this.вырезатьToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.вырезатьToolStripMenuItem.Name = "вырезатьToolStripMenuItem";
-            this.вырезатьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.вырезатьToolStripMenuItem.Text = "Вырезать";
+            resources.ApplyResources(this.вырезатьToolStripMenuItem, "вырезатьToolStripMenuItem");
+            this.вырезатьToolStripMenuItem.Click += new System.EventHandler(this.вырезатьToolStripMenuItem_Click);
             // 
             // копироватьToolStripMenuItem
             // 
+            this.копироватьToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.копироватьToolStripMenuItem.Name = "копироватьToolStripMenuItem";
-            this.копироватьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.копироватьToolStripMenuItem.Text = "Копировать";
+            resources.ApplyResources(this.копироватьToolStripMenuItem, "копироватьToolStripMenuItem");
+            this.копироватьToolStripMenuItem.Click += new System.EventHandler(this.копироватьToolStripMenuItem_Click);
             // 
             // вставитьToolStripMenuItem
             // 
+            this.вставитьToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.вставитьToolStripMenuItem.Name = "вставитьToolStripMenuItem";
-            this.вставитьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.вставитьToolStripMenuItem.Text = "Вставить";
+            resources.ApplyResources(this.вставитьToolStripMenuItem, "вставитьToolStripMenuItem");
+            this.вставитьToolStripMenuItem.Click += new System.EventHandler(this.вставитьToolStripMenuItem_Click);
             // 
             // удалитьToolStripMenuItem
             // 
+            this.удалитьToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
+            resources.ApplyResources(this.удалитьToolStripMenuItem, "удалитьToolStripMenuItem");
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // выделитьВсеToolStripMenuItem
             // 
+            this.выделитьВсеToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.выделитьВсеToolStripMenuItem.Name = "выделитьВсеToolStripMenuItem";
-            this.выделитьВсеToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.выделитьВсеToolStripMenuItem.Text = "Выделить все";
+            resources.ApplyResources(this.выделитьВсеToolStripMenuItem, "выделитьВсеToolStripMenuItem");
             this.выделитьВсеToolStripMenuItem.Click += new System.EventHandler(this.выделитьВсеToolStripMenuItem_Click);
             // 
             // текстToolStripMenuItem
             // 
+            this.текстToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.текстToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.постановкаЗадачиToolStripMenuItem,
             this.грамматикаToolStripMenuItem,
             this.классификацияГрамматикиToolStripMenuItem,
             this.методАнализаToolStripMenuItem,
             this.диагностикаИНейтрализацияОшибокToolStripMenuItem,
-            this.текстовыйПримерToolStripMenuItem,
+            this.тестовыйПримерToolStripMenuItem,
             this.списокЛитературыToolStripMenuItem,
             this.исходныйКодПрограммыToolStripMenuItem});
             this.текстToolStripMenuItem.Name = "текстToolStripMenuItem";
-            this.текстToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.текстToolStripMenuItem.Text = "Текст";
+            resources.ApplyResources(this.текстToolStripMenuItem, "текстToolStripMenuItem");
             // 
             // постановкаЗадачиToolStripMenuItem
             // 
+            this.постановкаЗадачиToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.постановкаЗадачиToolStripMenuItem.Name = "постановкаЗадачиToolStripMenuItem";
-            this.постановкаЗадачиToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
-            this.постановкаЗадачиToolStripMenuItem.Text = "Постановка задачи";
+            resources.ApplyResources(this.постановкаЗадачиToolStripMenuItem, "постановкаЗадачиToolStripMenuItem");
+            this.постановкаЗадачиToolStripMenuItem.Click += new System.EventHandler(this.постановкаЗадачиToolStripMenuItem_Click);
             // 
             // грамматикаToolStripMenuItem
             // 
+            this.грамматикаToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.грамматикаToolStripMenuItem.Name = "грамматикаToolStripMenuItem";
-            this.грамматикаToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
-            this.грамматикаToolStripMenuItem.Text = "Грамматика";
+            resources.ApplyResources(this.грамматикаToolStripMenuItem, "грамматикаToolStripMenuItem");
+            this.грамматикаToolStripMenuItem.Click += new System.EventHandler(this.грамматикаToolStripMenuItem_Click);
             // 
             // классификацияГрамматикиToolStripMenuItem
             // 
+            this.классификацияГрамматикиToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.классификацияГрамматикиToolStripMenuItem.Name = "классификацияГрамматикиToolStripMenuItem";
-            this.классификацияГрамматикиToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
-            this.классификацияГрамматикиToolStripMenuItem.Text = "Классификация грамматики";
+            resources.ApplyResources(this.классификацияГрамматикиToolStripMenuItem, "классификацияГрамматикиToolStripMenuItem");
+            this.классификацияГрамматикиToolStripMenuItem.Click += new System.EventHandler(this.классификацияГрамматикиToolStripMenuItem_Click);
             // 
             // методАнализаToolStripMenuItem
             // 
+            this.методАнализаToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.методАнализаToolStripMenuItem.Name = "методАнализаToolStripMenuItem";
-            this.методАнализаToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
-            this.методАнализаToolStripMenuItem.Text = "Метод анализа";
+            resources.ApplyResources(this.методАнализаToolStripMenuItem, "методАнализаToolStripMenuItem");
+            this.методАнализаToolStripMenuItem.Click += new System.EventHandler(this.методАнализаToolStripMenuItem_Click);
             // 
             // диагностикаИНейтрализацияОшибокToolStripMenuItem
             // 
+            this.диагностикаИНейтрализацияОшибокToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.диагностикаИНейтрализацияОшибокToolStripMenuItem.Name = "диагностикаИНейтрализацияОшибокToolStripMenuItem";
-            this.диагностикаИНейтрализацияОшибокToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
-            this.диагностикаИНейтрализацияОшибокToolStripMenuItem.Text = "Диагностика и нейтрализация ошибок";
+            resources.ApplyResources(this.диагностикаИНейтрализацияОшибокToolStripMenuItem, "диагностикаИНейтрализацияОшибокToolStripMenuItem");
+            this.диагностикаИНейтрализацияОшибокToolStripMenuItem.Click += new System.EventHandler(this.диагностикаИНейтрализацияОшибокToolStripMenuItem_Click);
             // 
-            // текстовыйПримерToolStripMenuItem
+            // тестовыйПримерToolStripMenuItem
             // 
-            this.текстовыйПримерToolStripMenuItem.Name = "текстовыйПримерToolStripMenuItem";
-            this.текстовыйПримерToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
-            this.текстовыйПримерToolStripMenuItem.Text = "Текстовый пример";
+            this.тестовыйПримерToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.тестовыйПримерToolStripMenuItem.Name = "тестовыйПримерToolStripMenuItem";
+            resources.ApplyResources(this.тестовыйПримерToolStripMenuItem, "тестовыйПримерToolStripMenuItem");
+            this.тестовыйПримерToolStripMenuItem.Click += new System.EventHandler(this.тестовыйПримерToolStripMenuItem_Click);
             // 
             // списокЛитературыToolStripMenuItem
             // 
+            this.списокЛитературыToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.списокЛитературыToolStripMenuItem.Name = "списокЛитературыToolStripMenuItem";
-            this.списокЛитературыToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
-            this.списокЛитературыToolStripMenuItem.Text = "Список литературы";
+            resources.ApplyResources(this.списокЛитературыToolStripMenuItem, "списокЛитературыToolStripMenuItem");
+            this.списокЛитературыToolStripMenuItem.Click += new System.EventHandler(this.списокЛитературыToolStripMenuItem_Click);
             // 
             // исходныйКодПрограммыToolStripMenuItem
             // 
+            this.исходныйКодПрограммыToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.исходныйКодПрограммыToolStripMenuItem.Name = "исходныйКодПрограммыToolStripMenuItem";
-            this.исходныйКодПрограммыToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
-            this.исходныйКодПрограммыToolStripMenuItem.Text = "Исходный код программы";
+            resources.ApplyResources(this.исходныйКодПрограммыToolStripMenuItem, "исходныйКодПрограммыToolStripMenuItem");
+            this.исходныйКодПрограммыToolStripMenuItem.Click += new System.EventHandler(this.исходныйКодПрограммыToolStripMenuItem_Click);
             // 
             // пускToolStripMenuItem
             // 
+            this.пускToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.пускToolStripMenuItem.Name = "пускToolStripMenuItem";
-            this.пускToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.пускToolStripMenuItem.Text = "Пуск";
+            resources.ApplyResources(this.пускToolStripMenuItem, "пускToolStripMenuItem");
+            this.пускToolStripMenuItem.Click += new System.EventHandler(this.ПускToolStripMenuItem_Click);
+            // 
+            // видToolStripMenuItem
+            // 
+            this.видToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.увеличитьМасштабToolStripMenuItem,
+            this.уменьшитьМасштабToolStripMenuItem});
+            this.видToolStripMenuItem.Name = "видToolStripMenuItem";
+            resources.ApplyResources(this.видToolStripMenuItem, "видToolStripMenuItem");
+            // 
+            // увеличитьМасштабToolStripMenuItem
+            // 
+            this.увеличитьМасштабToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.увеличитьМасштабToolStripMenuItem.Name = "увеличитьМасштабToolStripMenuItem";
+            resources.ApplyResources(this.увеличитьМасштабToolStripMenuItem, "увеличитьМасштабToolStripMenuItem");
+            this.увеличитьМасштабToolStripMenuItem.Click += new System.EventHandler(this.УвеличитьМасштабToolStripMenuItem_Click);
+            // 
+            // уменьшитьМасштабToolStripMenuItem
+            // 
+            this.уменьшитьМасштабToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.уменьшитьМасштабToolStripMenuItem.Name = "уменьшитьМасштабToolStripMenuItem";
+            resources.ApplyResources(this.уменьшитьМасштабToolStripMenuItem, "уменьшитьМасштабToolStripMenuItem");
+            this.уменьшитьМасштабToolStripMenuItem.Click += new System.EventHandler(this.УменьшитьМасштабToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
+            this.справкаToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.вызовСправкиToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.справкаToolStripMenuItem.Text = "Справка";
+            resources.ApplyResources(this.справкаToolStripMenuItem, "справкаToolStripMenuItem");
             // 
             // вызовСправкиToolStripMenuItem
             // 
+            this.вызовСправкиToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.вызовСправкиToolStripMenuItem.Name = "вызовСправкиToolStripMenuItem";
-            this.вызовСправкиToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.вызовСправкиToolStripMenuItem.Text = "Вызов справки";
+            resources.ApplyResources(this.вызовСправкиToolStripMenuItem, "вызовСправкиToolStripMenuItem");
             this.вызовСправкиToolStripMenuItem.Click += new System.EventHandler(this.вызовСправкиToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
+            this.оПрограммеToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
-            // 
-            // textBox
-            // 
-            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox.Location = new System.Drawing.Point(12, 11);
-            this.textBox.Multiline = true;
-            this.textBox.Name = "textBox";
-            this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox.Size = new System.Drawing.Size(890, 261);
-            this.textBox.TabIndex = 2;
-            this.textBox.Visible = false;
+            resources.ApplyResources(this.оПрограммеToolStripMenuItem, "оПрограммеToolStripMenuItem");
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // saveButton
             // 
-            this.saveButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveButton.BackgroundImage")));
-            this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.saveButton.Location = new System.Drawing.Point(12, 31);
+            resources.ApplyResources(this.saveButton, "saveButton");
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(40, 40);
-            this.saveButton.TabIndex = 3;
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // debugTextBox
-            // 
-            this.debugTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.debugTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.debugTextBox.Location = new System.Drawing.Point(12, 16);
-            this.debugTextBox.Multiline = true;
-            this.debugTextBox.Name = "debugTextBox";
-            this.debugTextBox.ReadOnly = true;
-            this.debugTextBox.Size = new System.Drawing.Size(890, 119);
-            this.debugTextBox.TabIndex = 4;
-            // 
             // cutButton
             // 
-            this.cutButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cutButton.BackgroundImage")));
-            this.cutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cutButton.Location = new System.Drawing.Point(359, 29);
+            resources.ApplyResources(this.cutButton, "cutButton");
             this.cutButton.Name = "cutButton";
-            this.cutButton.Size = new System.Drawing.Size(40, 40);
-            this.cutButton.TabIndex = 5;
             this.cutButton.UseVisualStyleBackColor = true;
             this.cutButton.Click += new System.EventHandler(this.cutButton_Click);
             // 
             // copyButton
             // 
-            this.copyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("copyButton.BackgroundImage")));
-            this.copyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.copyButton.Location = new System.Drawing.Point(313, 29);
+            resources.ApplyResources(this.copyButton, "copyButton");
             this.copyButton.Name = "copyButton";
-            this.copyButton.Size = new System.Drawing.Size(40, 40);
-            this.copyButton.TabIndex = 6;
             this.copyButton.UseVisualStyleBackColor = true;
             this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
             // 
             // pasteButton
             // 
-            this.pasteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pasteButton.BackgroundImage")));
-            this.pasteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pasteButton.Location = new System.Drawing.Point(267, 31);
+            this.pasteButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            resources.ApplyResources(this.pasteButton, "pasteButton");
             this.pasteButton.Name = "pasteButton";
-            this.pasteButton.Size = new System.Drawing.Size(40, 40);
-            this.pasteButton.TabIndex = 7;
-            this.pasteButton.UseVisualStyleBackColor = true;
+            this.pasteButton.UseVisualStyleBackColor = false;
             this.pasteButton.Click += new System.EventHandler(this.pasteButton_Click);
             // 
             // undoButton
             // 
-            this.undoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("undoButton.BackgroundImage")));
-            this.undoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.undoButton.Location = new System.Drawing.Point(138, 31);
+            resources.ApplyResources(this.undoButton, "undoButton");
             this.undoButton.Name = "undoButton";
-            this.undoButton.Size = new System.Drawing.Size(40, 40);
-            this.undoButton.TabIndex = 8;
             this.undoButton.UseVisualStyleBackColor = true;
             this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
             // 
             // redoButton
             // 
-            this.redoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("redoButton.BackgroundImage")));
-            this.redoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.redoButton.Location = new System.Drawing.Point(184, 31);
+            this.redoButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            resources.ApplyResources(this.redoButton, "redoButton");
             this.redoButton.Name = "redoButton";
-            this.redoButton.Size = new System.Drawing.Size(40, 40);
-            this.redoButton.TabIndex = 9;
-            this.redoButton.UseVisualStyleBackColor = true;
+            this.redoButton.UseVisualStyleBackColor = false;
             this.redoButton.Click += new System.EventHandler(this.redoButton_Click);
-            // 
-            // mainSplitContainer
-            // 
-            this.mainSplitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainSplitContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.mainSplitContainer.Location = new System.Drawing.Point(12, 77);
-            this.mainSplitContainer.Name = "mainSplitContainer";
-            this.mainSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // mainSplitContainer.Panel1
-            // 
-            this.mainSplitContainer.Panel1.Controls.Add(this.textBox);
-            // 
-            // mainSplitContainer.Panel2
-            // 
-            this.mainSplitContainer.Panel2.Controls.Add(this.debugLabel);
-            this.mainSplitContainer.Panel2.Controls.Add(this.debugTextBox);
-            this.mainSplitContainer.Size = new System.Drawing.Size(918, 414);
-            this.mainSplitContainer.SplitterDistance = 275;
-            this.mainSplitContainer.TabIndex = 10;
-            // 
-            // debugLabel
-            // 
-            this.debugLabel.AutoSize = true;
-            this.debugLabel.Location = new System.Drawing.Point(9, 0);
-            this.debugLabel.Name = "debugLabel";
-            this.debugLabel.Size = new System.Drawing.Size(35, 13);
-            this.debugLabel.TabIndex = 5;
-            this.debugLabel.Text = "label2";
             // 
             // createNewButton
             // 
-            this.createNewButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("createNewButton.BackgroundImage")));
-            this.createNewButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.createNewButton.Location = new System.Drawing.Point(58, 31);
+            resources.ApplyResources(this.createNewButton, "createNewButton");
             this.createNewButton.Name = "createNewButton";
-            this.createNewButton.Size = new System.Drawing.Size(40, 40);
-            this.createNewButton.TabIndex = 11;
             this.createNewButton.UseVisualStyleBackColor = true;
             this.createNewButton.Click += new System.EventHandler(this.createNewButton_Click);
+            // 
+            // openNewButton
+            // 
+            resources.ApplyResources(this.openNewButton, "openNewButton");
+            this.openNewButton.Name = "openNewButton";
+            this.openNewButton.UseVisualStyleBackColor = true;
+            this.openNewButton.Click += new System.EventHandler(this.openNewButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(942, 493);
+            resources.ApplyResources(this, "$this");
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Controls.Add(this.openNewButton);
             this.Controls.Add(this.createNewButton);
             this.Controls.Add(this.mainSplitContainer);
             this.Controls.Add(this.redoButton);
@@ -426,19 +452,18 @@
             this.Controls.Add(this.cutButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.menuStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "AVT Studio";
+            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.mainSplitContainer.Panel1.ResumeLayout(false);
-            this.mainSplitContainer.Panel1.PerformLayout();
             this.mainSplitContainer.Panel2.ResumeLayout(false);
             this.mainSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
             this.mainSplitContainer.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,14 +491,13 @@
         private System.Windows.Forms.ToolStripMenuItem классификацияГрамматикиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem методАнализаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem диагностикаИНейтрализацияОшибокToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem текстовыйПримерToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem тестовыйПримерToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокЛитературыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem исходныйКодПрограммыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пускToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вызовСправкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TextBox debugTextBox;
         private System.Windows.Forms.Button cutButton;
@@ -484,6 +508,13 @@
         private System.Windows.Forms.SplitContainer mainSplitContainer;
         private System.Windows.Forms.Button createNewButton;
         private System.Windows.Forms.Label debugLabel;
+        private System.Windows.Forms.RichTextBox lineNumberRichTextBox;
+        private System.Windows.Forms.RichTextBox textBox;
+        private System.Windows.Forms.ToolStripMenuItem видToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem увеличитьМасштабToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem уменьшитьМасштабToolStripMenuItem;
+        private System.Windows.Forms.Button openNewButton;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
     }
 }
 
