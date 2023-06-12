@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Net.WebRequestMethods;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TFYAiK
 {
@@ -27,11 +19,11 @@ namespace TFYAiK
 
         public void SaveFileAs(string text)
         {
-            if(text == "")
-            {
-                //exp or smth
+            if (text == "")
+            {            
                 return;
             }
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text |*.txt|All files (*.*)|*.*";
             saveFileDialog.Title = "Save an Text File";
@@ -66,15 +58,9 @@ namespace TFYAiK
             CreateFileDialog.Filter = "Text |*.txt|All files (*.*)|*.*";
             CreateFileDialog.Title = "Создать";
 
-            if (CreateFileDialog.ShowDialog() == DialogResult.Cancel)
-            {
-                //переделать
-                //return "File ne otkrilsya";
-            }
-            else
+            if (CreateFileDialog.ShowDialog() == DialogResult.OK)
             {
                 this.currentFile = CreateFileDialog.FileName;
-
                 StreamWriter streamWriter = new StreamWriter(this.currentFile);
                 streamWriter.Close();
             }
@@ -84,21 +70,15 @@ namespace TFYAiK
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text |*.txt|All files (*.*)|*.*";
-
-            if (openFileDialog.ShowDialog() == DialogResult.Cancel)
-            {
-                //переделать
-                return "File ne otkrilsya";
-            }
-            else
+            string fileText = string.Empty;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 this.currentFile = openFileDialog.FileName;
                 StreamReader streamReader = new StreamReader(this.currentFile);
-                string fileText = streamReader.ReadToEnd();
+                fileText = streamReader.ReadToEnd();
                 streamReader.Close();
-                ///string fileText = System.IO.File.ReadAllText(openFileDialog.FileName);
-                return fileText;
             }
+            return fileText;
         }
     }
 }

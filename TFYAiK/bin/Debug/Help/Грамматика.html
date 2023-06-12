@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.2.3 (Linux)"/>
+	<meta name="author" content="Алина Терешкина"/>
+	<meta name="created" content="2023-05-23T04:52:00"/>
+	<meta name="changedby" content="Алина Терешкина"/>
+	<meta name="changed" content="2023-05-23T05:01:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+		p { line-height: 115%; text-align: left; orphans: 2; widows: 2; margin-bottom: 0.1in; direction: ltr; background: transparent }
+		p.western { font-family: "Times New Roman", serif; font-size: 14pt }
+		p.cjk { font-size: 14pt }
+	</style>
+</head>
+<body lang="ru-KZ" link="#000080" vlink="#800000" dir="ltr"><p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+2 Разработка грамматики Грамматика
+логических выражений в <span lang="en-US">PASCAL
+</span>G[Expr] в нотации Хомского с продукциями
+P: 
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">Следуя
+введенному формальному определению
+грамматики, представим G[Expr]ее составляющими:</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+Vт={<span lang="en-US">&lt;,&gt;,&lt;=,=,+,-,*,div,&lt; &gt;,</span>TRUE.
+, .FALSE. , RelOp, AddOp(+,-), MulOp(*,/), Identifier} 
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">Vn=
+{ORExpr, AndExpr, NotExpr, RelExpr, AddExpr, MulExpr, UnaryExpr,
+Factor}</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+Правило:</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+1. S -&gt; &lt;Expr&gt;</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+2. ORExpr -&gt; &lt;ORExpr&gt;<span lang="en-US">or</span>&lt;AndExpr&gt;|AndExpr</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+3. AndExpr-&gt; &lt;AndExpr&gt;<span lang="en-US">and</span>&lt;NotExpr&gt;|NotExpr</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+4. NotExpr-&gt; &lt;NotExpr&gt;|RelExpr</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+5. RelExpr-&gt; &lt;AddExpr&gt;(RelOp AddExpr)*</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+6. AddExpr-&gt; &lt;MulExpr&gt;(AddOp MulExpr)* 
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">7.
+MulExpr -&gt; &lt;Unary&gt;(MulOp UnaryExpr)* 
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">8.
+UnaryExpr -&gt; &lt;Factor&gt;|(AddOp UnaryExpr)</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+9. Factor -&gt; &lt;Identifier&gt; | Const | `(`Expr`)`</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"> 
+‹Digit› → “0” | “1” | “2” | “3” | “4” | “5”
+| “6” | “7” | “8” | “9”  
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in">‹Letter›
+→ “A” | “B” | “C” | ... | “Z” <span lang="en-US">|</span>
+“<span lang="en-US">a</span>” | “<span lang="en-US">b</span>”
+| “<span lang="en-US">c</span>” | ... | “<span lang="en-US">z</span>”
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><br/>
+<br/>
+
+</p>
+</body>
+</html>

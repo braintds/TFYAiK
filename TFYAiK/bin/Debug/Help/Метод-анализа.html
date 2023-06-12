@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.2.3 (Linux)"/>
+	<meta name="author" content="АВТ-012 Кирилл Савин"/>
+	<meta name="created" content="2023-05-23T04:53:00"/>
+	<meta name="changedby" content="АВТ-012 Кирилл Савин"/>
+	<meta name="changed" content="2023-05-23T04:57:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+		p { line-height: 115%; text-align: left; orphans: 2; widows: 2; margin-bottom: 0.1in; direction: ltr; background: transparent }
+		p.western { font-family: "Times New Roman", serif; font-size: 14pt }
+		p.cjk { font-size: 14pt }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+<font color="#000000"><b>Метод анализа</b></font></p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">Алгоритм
+рекурсивного спуска для анализа
+логических выражений в грамматике языка
+</font><font color="#000000"><span lang="en-US">Pascal</span></font><font color="#000000">
+G[‹Expr›]: </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">1.
+Начинаем с символа ‹Expr›. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">2.
+Метод для символа ‹Expr› вызывает метод
+для символа ‹OrExpr›. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">3.
+Метод для символа ‹OrExpr› вызывает метод
+для символа ‹AndExpr›. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">4.
+Метод для символа ‹AndExpr вызывает метод
+для символа ‹NotExpr›. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">5.
+Метод для символа ‹NotExpr› проверяет
+наличие оператора отрицания '.NOT.', если
+он есть,  продолжает непосредственно с
+метода для символа ‹RelExpr›. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">6.
+Метод для символа ‹RelExpr› проверяет тип
+текущего токена. Если это идентификатор,
+логический литерал или число, то переходим
+к следующему токену. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">7.
+Метод для символа ‹RelExpr› проверяет,
+является ли текущий токен оператором
+сравнения. Если это так, вызываем метод
+для символа ‹AddExpr›. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">8.
+Метод для символа ‹AddExpr› вызывает метод
+для символа ‹MulExpr›, затем проверяет
+наличие оператора арифметической
+операции   и вызывает метод для символа
+‹MulExpr› еще раз. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">9.
+Метод для символа ‹MulExpr› вызывает метод
+для символа ‹UnaryExpr› . </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">10.
+Метод для символа ‹UnaryExpr› вызывает
+метод для символа ‹Factor› и проверяет
+наличие операторов умножения, деления
+или остатка от деления, вызывая метод
+для символа ‹Factor› при их наличии. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">11.
+Метод для символа ‹Factor› проверяет тип
+текущего токена. Если это идентификатор,
+целочисленное или вещественное число,
+то переходим к следующему токену. Если
+это символ '(', вызываем метод для символа
+‹UnaryExpr›, затем проверяем наличие символа
+')', иначе возвращаем ошибку. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">12.
+Если текущий токен не является допустимым
+для данного выражения, возвращаем
+ошибку. </font>
+</p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><font color="#000000">13.
+Если достигнут конец выражения и ошибок
+не возникло, возвращаем успешный
+результат</font></p>
+</body>
+</html>

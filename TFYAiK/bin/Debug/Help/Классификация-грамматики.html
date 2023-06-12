@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.2.3 (Linux)"/>
+	<meta name="author" content="Алина Терешкина"/>
+	<meta name="created" content="2023-05-23T04:52:00"/>
+	<meta name="changedby" content="АВТ-012 Кирилл Савин"/>
+	<meta name="changed" content="2023-05-23T05:17:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+		p { line-height: 115%; text-align: left; orphans: 2; widows: 2; margin-bottom: 0.1in; direction: ltr; background: transparent }
+		p.western { font-family: "Times New Roman", serif; font-size: 14pt }
+		p.cjk { font-size: 14pt }
+	</style>
+</head>
+<body lang="ru-KZ" link="#000080" vlink="#800000" dir="ltr"><p class="western" style="line-height: 108%; margin-bottom: 0.11in">
+<b>	</b><span lang="ru-RU"><b>Классификация грамматики</b></span></p>
+<p class="western" style="line-height: 108%; text-indent: 0.5in; margin-bottom: 0.11in">
+<span lang="ru-RU">Согласно классификации
+Хомского, грамматика </span><span lang="en-US">G</span><span lang="ru-RU">[</span><span lang="en-US">Expr</span><span lang="ru-RU">]
+является конетекстно-свободной.</span></p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><span lang="ru-RU">	S-грамматики
+– это подкласс  контекстно-свободных 
+грамматик,  таких что:</span></p>
+<ol>
+	<li><p style="line-height: 108%; margin-bottom: 0.11in"><span lang="ru-RU">Правая
+	часть каждого правила начинается с
+	терминала </span><span lang="en-US">A</span>→<span lang="en-US">a</span><span lang="en-US">ꞵ</span></p>
+	<li><p style="line-height: 108%; margin-bottom: 0.11in"><span lang="ru-RU">Если
+	в грамматике есть альтернативные
+	правила, то они обязательно начинаются
+	с разных терминальных символов</span></p>
+</ol>
+<p style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+<span lang="en-US">A</span>→<span lang="en-US">a</span><span lang="en-US">ꞵ
+| ba, a </span>≠<span lang="en-US"> b</span></p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+1. S -&gt; &lt;Expr&gt;</p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+2. ORExpr -&gt; &lt;ORExpr&gt;<span lang="en-US">or</span>&lt;AndExpr&gt;|AndExpr</p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+3. AndExpr-&gt; &lt;AndExpr&gt;<span lang="en-US">and</span>&lt;NotExpr&gt;|NotExpr</p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+4. NotExpr-&gt; &lt;NotExpr&gt;|RelExpr</p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+5. RelExpr-&gt; &lt;AddExpr&gt;(RelOp AddExpr)*</p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+6. AddExpr-&gt; &lt;MulExpr&gt;(AddOp MulExpr)* 
+</p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+7. MulExpr -&gt; &lt;Unary&gt;(MulOp UnaryExpr)* 
+</p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+8. UnaryExpr -&gt; &lt;Factor&gt;|(AddOp UnaryExpr)</p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+9. Factor -&gt; &lt;Identifier&gt; | Const | `(`Expr`)`</p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+  ‹Digit› → “0” | “1” | “2” | “3” | “4” |
+“5” | “6” | “7” | “8” | “9”  
+</p>
+<p class="western" style="line-height: 108%; margin-left: 0.5in; margin-bottom: 0.11in">
+‹Letter› → “A” | “B” | “C” | ... | “Z” <span lang="en-US">|</span>
+“<span lang="en-US">a</span>” | “<span lang="en-US">b</span>”
+| “<span lang="en-US">c</span>” | ... | “<span lang="en-US">z</span>”
+</p>
+<p class="western" style="margin-bottom: 0in; background: #ffffff"><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">ледует
+заметить, что данная грамматика
+реализуется с помощью </span></font></font></font>
+</p>
+<p class="western" style="margin-bottom: 0in; background: #ffffff"><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">метода
+рекурсивного спуска. Основная идея
+этого метода состоит в том, что </span></font></font></font>
+</p>
+<p class="western" style="margin-bottom: 0in; background: #ffffff"><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">каждому
+нетерминалу грамматики ставится в
+соответствие определенная </span></font></font></font>
+</p>
+<p class="western" style="margin-bottom: 0in; background: #ffffff"><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">программная
+единица, процедура или функция, которая
+распознает цепочку, </span></font></font></font>
+</p>
+<p class="western" style="margin-bottom: 0in; background: #ffffff"><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">порождаемую</span></font></font></font><font color="#000000"><font face="ff4, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">
+</span></font></font></font><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">этим
+нетерминалом</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0in; background: #ffffff"><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">ледует
+заметить, что данная грамматика
+реализуется с помощью </span></font></font></font>
+</p>
+<p class="western" style="margin-bottom: 0in; background: #ffffff"><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">метода
+рекурсивного спуска. Основная идея
+этого метода состоит в том, что </span></font></font></font>
+</p>
+<p class="western" style="margin-bottom: 0in; background: #ffffff"><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">каждому
+нетерминалу грамматики ставится в
+соответствие определенная </span></font></font></font>
+</p>
+<p class="western" style="margin-bottom: 0in; background: #ffffff"><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">программная
+единица, процедура или функция, которая
+распознает цепочку, </span></font></font></font>
+</p>
+<p class="western" style="margin-bottom: 0in; background: #ffffff"><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">порождаемую</span></font></font></font><font color="#000000"><font face="ff4, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">
+</span></font></font></font><font color="#000000"><font face="ff3, serif"><font size="7" style="font-size: 42pt"><span lang="ru-RU">этим
+нетерминалом</span></font></font></font></p>
+<p class="western" style="line-height: 108%; text-indent: 0.5in; margin-bottom: 0.11in">
+<span lang="ru-RU">Данная грамматика реализуется
+с помощью метода рекурсивного спуска.
+</span>
+</p>
+<p class="western" style="line-height: 108%; text-indent: 0.5in; margin-bottom: 0.11in">
+<span lang="ru-RU">Основная идея этого метода
+состоит в том, что каждому нетерминалу
+грамматики ставится в соответствие
+определенная программная единица,
+процедура или функция, которая распознает
+цепочку, порождаемую этим нетерминалом.</span></p>
+<p class="western" style="line-height: 108%; margin-bottom: 0.11in"><br/>
+<br/>
+
+</p>
+</body>
+</html>
