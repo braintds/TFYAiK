@@ -218,7 +218,6 @@
             this.повторитьToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.повторитьToolStripMenuItem.Name = "повторитьToolStripMenuItem";
             resources.ApplyResources(this.повторитьToolStripMenuItem, "повторитьToolStripMenuItem");
-            this.повторитьToolStripMenuItem.Click += new System.EventHandler(this.повторитьToolStripMenuItem_Click);
             // 
             // вырезатьToolStripMenuItem
             // 

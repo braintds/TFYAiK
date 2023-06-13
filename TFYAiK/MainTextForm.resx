@@ -253,7 +253,7 @@
     <value>True</value>
   </data>
   <data name="debugTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>903, 90</value>
+    <value>901, 88</value>
   </data>
   <data name="debugTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3007,7 +3007,7 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>78</value>
+    <value>51</value>
   </metadata>
   <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>

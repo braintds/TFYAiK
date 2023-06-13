@@ -265,42 +265,42 @@ namespace TFYAiK
 
         private void постановкаЗадачиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openDocument("\\Help\\Постановка-задачи.html");
+            openDocument("\\Help\\Постановка-задачи.pdf");
         }
 
         private void грамматикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openDocument("\\Help\\Грамматика.html");
+            openDocument("\\Help\\Грамматика.pdf");
         }
 
         private void классификацияГрамматикиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openDocument("\\Help\\Классификация-грамматики.html");
+            openDocument("\\Help\\Классификация-грамматики.pdf");
         }
 
         private void методАнализаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openDocument("\\Help\\Метод-анализа.html");
+            openDocument("\\Help\\Метод-анализа.pdf");
         }
 
         private void диагностикаИНейтрализацияОшибокToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openDocument("\\Help\\Диагностика-и-нейтрализация-ошибок.html");
+            openDocument("\\Help\\Диагностика-и-нейтрализация-ошибок.pdf");
         }
 
         private void тестовыйПримерToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openDocument("\\Help\\Текстовый пример.html");
+            openDocument("\\Help\\Текстовый пример.pdf");
         }
 
         private void списокЛитературыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openDocument("\\Help\\Список-литературы.html");
+            openDocument("\\Help\\Список-литературы.pdf");
         }
 
         private void исходныйКодПрограммыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openDocument("\\Help\\Исходный код программы.html");
+            openDocument("\\Help\\Исходный код программы.pdf");
         }
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -326,18 +326,9 @@ namespace TFYAiK
                 this.textBox.Cut();
         }
 
-        private void повторитьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            redo(textBox);
-        }
-
         private void отменитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             undo(textBox);
-        }
-
-        private void оПрограммеToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
         }
     }
 
